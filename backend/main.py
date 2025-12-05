@@ -1,11 +1,5 @@
 """FastAPI backend for DocSense."""
-import sys
 from pathlib import Path
-
-# Add project root to Python path to allow imports
-project_root = Path(__file__).parent.parent
-if str(project_root) not in sys.path:
-    sys.path.insert(0, str(project_root))
 
 from fastapi import FastAPI, UploadFile, File, HTTPException, Form
 from fastapi.middleware.cors import CORSMiddleware
@@ -13,25 +7,15 @@ from fastapi.responses import JSONResponse, FileResponse
 from typing import Optional
 import os
 
-# Try both import styles for flexibility
-try:
-    from backend.loaders.pdf_loader import load_pdf
-    from backend.loaders.docx_loader import load_docx
-    from backend.loaders.txt_loader import load_txt
-    from backend.processors.summarizer import summarize_document
-    from backend.processors.extractor import extract_information
-    from backend.processors.classifier import classify_document
-    from backend.processors.json_convertor import convert_to_json
-    from backend.processors.comparator import compare_documents
-except ImportError:
-    from loaders.pdf_loader import load_pdf
-    from loaders.docx_loader import load_docx
-    from loaders.txt_loader import load_txt
-    from processors.summarizer import summarize_document
-    from processors.extractor import extract_information
-    from processors.classifier import classify_document
-    from processors.json_convertor import convert_to_json
-    from processors.comparator import compare_documents
+from backend.loaders.pdf_loader import load_pdf
+from backend.loaders.docx_loader import load_docx
+from backend.loaders.txt_loader import load_txt
+
+from backend.processors.summarizer import summarize_document
+from backend.processors.extractor import extract_information
+from backend.processors.classifier import classify_document
+from backend.processors.json_converter import convert_to_json
+from backend.processors.comparator import compare_documents
 
 app = FastAPI(title="DocSense API", version="1.0.0")
 
@@ -64,9 +48,9 @@ def load_document(file: UploadFile) -> str:
 
 
 @app.get("/")
-async def root():
-    """Root endpoint."""
-    return {"message": "DocSense API is running", "version": "1.0.0"}
+def home():
+    """Root endpoint for testing."""
+    return {"message": "DocSense backend is running!"}
 
 
 @app.post("/api/summarize")

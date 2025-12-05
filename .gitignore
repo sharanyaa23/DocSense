@@ -1,5 +1,6 @@
 # Python virtual environments
 venv/
+venv1/
 ENV/
 env/
 .venv/
@@ -7,3 +8,30 @@ env/
 # Environment variable files
 .env
 .env.*
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.log
+
+# IDE / Editor files
+.vscode/
+.idea/
+
+# FastAPI / Uvicorn logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Build / compiled files
+build/
+dist/
+*.egg-info/
+
+# Temporary uploads (if created in project)
+uploads/
