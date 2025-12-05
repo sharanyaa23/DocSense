@@ -7,15 +7,15 @@ from fastapi.responses import JSONResponse, FileResponse
 from typing import Optional
 import os
 
-from backend.loaders.pdf_loader import load_pdf
-from backend.loaders.docx_loader import load_docx
-from backend.loaders.txt_loader import load_txt
+from loaders.pdf_loader import load_pdf
+from loaders.docx_loader import load_docx
+from loaders.txt_loader import load_txt
 
-from backend.processors.summarizer import summarize_document
-from backend.processors.extractor import extract_information
-from backend.processors.classifier import classify_document
-from backend.processors.json_converter import convert_to_json
-from backend.processors.comparator import compare_documents
+from processors.summarizer import summarize_document
+from processors.extractor import extract_information
+from processors.classifier import classify_document
+from processors.json_converter import convert_to_json
+from processors.comparator import compare_documents
 
 app = FastAPI(title="DocSense API", version="1.0.0")
 
