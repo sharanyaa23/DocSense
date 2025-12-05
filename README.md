@@ -2,6 +2,12 @@
 
 DocSense is an intelligent document-processing agent that allows users to upload PDF, DOCX, or TXT files and choose exactly what they want the system to do. Built with a lightweight HTML frontend and a FastAPI backend, DocSense uses LangChain, LangGraph, and Groq LLMs to intelligently analyze, summarize, extract, classify, convert, and compare documents — all with multi-step validation to ensure correctness and zero hallucinations.
 
+## 🌐 Live Website
+
+**Try DocSense now:** [https://doc-sense-w7du.vercel.app/](https://doc-sense-w7du.vercel.app/)
+
+Upload your documents and experience AI-powered document processing in real-time!
+
 ## 🛠 Tech Stack
 
 - **Frontend**: HTML (single file), Embedded CSS, JavaScript
@@ -43,7 +49,7 @@ Compares two documents and identifies additions, deletions, and modifications. C
 1. **Clone or navigate to the project directory:**
 
    ```bash
-   cd docSSS
+   cd docSense
    ```
 
 2. **Create a virtual environment (recommended):**
@@ -76,14 +82,14 @@ Compares two documents and identifies additions, deletions, and modifications. C
    The API will be available at `http://localhost:8000`
 
 6. **Open the frontend:**
-   - Open `frontend/code.html` in your web browser
+   - Open `frontend/index.html` in your web browser
    - Or serve it using a simple HTTP server:
      ```bash
      # Python 3
      cd frontend
      python -m http.server 8080
      ```
-     Then open `http://localhost:8080/code.html` in your browser
+     Then open `http://localhost:8080/index.html` in your browser
 
 ## 📖 Usage
 
@@ -92,15 +98,6 @@ Compares two documents and identifies additions, deletions, and modifications. C
 3. **For comparison**: Upload a second file when "Document Comparison" is selected
 4. **Process**: Click "Process Document" to get results
 5. **View results**: Results appear in the right panel with options to copy or download
-
-## 🔧 API Endpoints
-
-- `POST /api/summarize` - Summarize a document
-- `POST /api/extract` - Extract information from a document
-- `POST /api/classify` - Classify a document
-- `POST /api/convert-json` - Convert document to JSON
-- `POST /api/compare` - Compare two documents
-- `GET /api/health` - Health check
 
 ## 📁 Project Structure
 
@@ -124,7 +121,7 @@ docSense/
 │   │   └── cleaner.py      # Text cleaning utilities
 │   └── main.py             # FastAPI application
 ├── frontend/
-│   └── code.html           # Single-page HTML frontend
+│   └── index.html           # Single-page HTML frontend
 ├── requirements.txt        # Python dependencies
 └── README.md              # This file
 ```
@@ -142,8 +139,9 @@ docSense/
 
 ## 📝 Notes
 
-- The frontend expects the backend to be running on `http://localhost:8000`
-- For production, update the `API_BASE_URL` in `code.html` to point to your backend server
+- **Live Demo**: Visit [https://doc-sense-w7du.vercel.app/](https://doc-sense-w7du.vercel.app/) to try DocSense online
+- The frontend expects the backend to be running on `http://localhost:8000` for local development
+- For production, update the `API_BASE_URL` in `index.html` to point to your backend server
 - Large documents may take longer to process
 - The system uses chunking for large documents to stay within token limits
 
