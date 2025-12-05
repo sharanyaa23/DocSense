@@ -3,10 +3,7 @@ import re
 from typing import Dict, Any, List, Optional
 from langchain_core.messages import HumanMessage
 
-try:
-    from ..agent.llm import get_llm
-except ImportError:
-    from backend.agent.llm import get_llm
+from agent.llm import get_llm
 
 
 def extract_information(document: str, extraction_type: str = "all") -> Dict[str, Any]:

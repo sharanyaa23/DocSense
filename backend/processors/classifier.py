@@ -2,12 +2,8 @@
 from typing import Dict, Any
 from langchain_core.messages import HumanMessage
 
-try:
-    from ..agent.llm import get_llm
-    from ..utils.cleaner import strip_markdown
-except ImportError:
-    from backend.agent.llm import get_llm
-    from backend.utils.cleaner import strip_markdown
+from agent.llm import get_llm
+from utils.cleaner import strip_markdown
 
 
 def classify_document(document: str) -> Dict[str, Any]:

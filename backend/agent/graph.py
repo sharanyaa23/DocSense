@@ -2,7 +2,7 @@
 from typing import TypedDict, Annotated, Literal
 from langgraph.graph import StateGraph, END
 from langchain_core.messages import HumanMessage, AIMessage
-from .llm import get_llm
+from agent.llm import get_llm
 
 
 class GraphState(TypedDict):

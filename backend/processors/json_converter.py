@@ -4,10 +4,7 @@ import re
 from typing import Dict, Any, Optional
 from langchain_core.messages import HumanMessage
 
-try:
-    from ..agent.llm import get_llm
-except ImportError:
-    from backend.agent.llm import get_llm
+from agent.llm import get_llm
 
 
 def convert_to_json(document: str, max_retries: int = 3) -> Dict[str, Any]:

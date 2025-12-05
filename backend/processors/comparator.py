@@ -2,12 +2,8 @@
 from typing import Dict, Any, List, Tuple
 from langchain_core.messages import HumanMessage
 
-try:
-    from ..agent.llm import get_llm
-    from ..utils.cleaner import chunk_text
-except ImportError:
-    from backend.agent.llm import get_llm
-    from backend.utils.cleaner import chunk_text
+from agent.llm import get_llm
+from utils.cleaner import chunk_text
 
 
 def compare_documents(doc1: str, doc2: str) -> Dict[str, Any]:
